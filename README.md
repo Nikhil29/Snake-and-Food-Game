@@ -1,3 +1,2 @@
 # hello-world
-my first git-hub stuff hghb
-hai
+Linux Snake and Ladder Game using Ncurses Library
