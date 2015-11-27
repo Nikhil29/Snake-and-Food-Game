@@ -4,6 +4,7 @@
 #include<ncurses.h>
 //use -lnurses while compilation
 /*see the initscr function defination in the library*/
+// this a shell snake and ladder game
 bool curses_started = false;
 void endCurses() 
 {
