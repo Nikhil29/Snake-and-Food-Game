@@ -4,7 +4,7 @@
 #include<ncurses.h>
 //use -lnurses while compilation
 /*see the initscr function defination in the library*/
-// this a shell snake and ladder game
+// this a shell snake and food game
 bool curses_started = false;
 void endCurses() 
 {
@@ -13,25 +13,25 @@ void endCurses()
 	        endwin();		/* clean up all allocated resources from ncurses and put terminal in normal mode */
 	}
 }
-               void startCurses() 
-               {
-                  if (curses_started) 
-                  {
-                     refresh();		/* there are 2 screens one is cur_scr,other is std_scr.The data is first written to std_scr i.e a buffer and on calling the refresh function, the std_scr buffer is written to actual screen i.e cur_scr.thus it is used after a set of print commands to actually display on screen*/
-                  }
-                  else 
-                  {
-                     initscr();		/*initializes the curses library*/
-                     cbreak();		/* take input chars one at a time, no wait for \n */
-                    // raw();		/* same as cbreak but receives ctrl+c and ctrl+z as input and not as signal */
-                     noecho();		/* donot echo input */
-                     intrflush(stdscr, false);	/* no(false) data is flushed if interrupt key or signal is there */
-                     keypad(stdscr, true); 	/* enable keyboard mapping */
-                     atexit(endCurses);		/* starts the function endcurses on exit */
-                     curs_set(0);	/* sets the cursor to invisible,visible,very visible by passing parameter 0,1,2. here 0 is passed for invisible cursor*/
-                     curses_started = true;	/*flag used so that repeated calling doesnot take place*/ 
-                  }
-               }
+void startCurses() 
+{
+  if (curses_started) 
+  {
+     refresh();		/* there are 2 screens one is cur_scr,other is std_scr.The data is first written to std_scr i.e a buffer and on calling the refresh function, the std_scr buffer is written to actual screen i.e cur_scr.thus it is used after a set of print commands to actually display on screen*/
+  }
+  else 
+  {
+     initscr();		/*initializes the curses library*/
+     cbreak();		/* take input chars one at a time, no wait for \n */
+    // raw();		/* same as cbreak but receives ctrl+c and ctrl+z as input and not as signal */
+     noecho();		/* donot echo input */
+     intrflush(stdscr, false);	/* no(false) data is flushed if interrupt key or signal is there */
+     keypad(stdscr, true); 	/* enable keyboard mapping */
+     atexit(endCurses);		/* starts the function endcurses on exit */
+     curs_set(0);	/* sets the cursor to invisible,visible,very visible by passing parameter 0,1,2. here 0 is passed for invisible cursor*/
+     curses_started = true;	/*flag used so that repeated calling doesnot take place*/ 
+  }
+}
 struct turninfo
     {
     int xcoord,ycoord,previousdirection;

@@ -1,2 +1,2 @@
-# hello-world
-Linux Snake and Ladder Game using Ncurses Library
+# Snake and Food Game
+Linux Snake and Food Game using Ncurses Library
