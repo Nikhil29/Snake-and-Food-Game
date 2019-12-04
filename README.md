@@ -15,3 +15,5 @@ gcc -lncurses game2.c -o game
 ````
 ./game
 ````
+
+Feel free to contribue to the repo by submitting a PR!!
