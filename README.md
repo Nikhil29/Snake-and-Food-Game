@@ -1,15 +1,17 @@
-# Snake and Food game
-Linux Snake and Food Game using Ncurses Library
+### Snake and Food game
 
-Dependency: Ncurses Library
+#### What it is about
+Created Snake and Food Game using Ncurses Library for linux platform.
 
-How to play:
+#### Dependency: 
+- Ncurses Library
 
-1.
-Compile the program:
-
-    gcc -lncurses game2.c -o game
-2.
-Play by running game in shell/terminal:
-
-    ./game
+#### How to play:
+- Compile the program:
+````
+gcc -lncurses game2.c -o game
+````
+- Play by running game in shell/terminal in the same folder:
+````
+./game
+````
